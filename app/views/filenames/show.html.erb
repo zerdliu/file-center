@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @filename.name %>
+</p>
+
+<p>
+  <b>Update type:</b>
+  <%= @filename.update_type %>
+</p>
+
+
+<%= link_to 'Edit', edit_filename_path(@filename) %> |
+<%= link_to 'Back', filenames_path %>

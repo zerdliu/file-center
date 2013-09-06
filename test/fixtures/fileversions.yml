@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  file_size: 1
+  file_version: 1
+  update_time: 2013-09-06 04:41:53
+
+two:
+  file_size: 1
+  file_version: 1
+  update_time: 2013-09-06 04:41:53

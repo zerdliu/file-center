@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>File size:</b>
+  <%= @fileversion.file_size %>
+</p>
+
+<p>
+  <b>File version:</b>
+  <%= @fileversion.file_version %>
+</p>
+
+<p>
+  <b>Update time:</b>
+  <%= @fileversion.update_time %>
+</p>
+
+
+<%= link_to 'Edit', edit_fileversion_path(@fileversion) %> |
+<%= link_to 'Back', fileversions_path %>

@@ -1,0 +1,27 @@
+<h1>Listing fileversions</h1>
+
+<table>
+  <tr>
+    <th>File size</th>
+    <th>File version</th>
+    <th>Update time</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fileversions.each do |fileversion| %>
+  <tr>
+    <td><%= fileversion.file_size %></td>
+    <td><%= fileversion.file_version %></td>
+    <td><%= fileversion.update_time %></td>
+    <td><%= link_to 'Show', fileversion %></td>
+    <td><%= link_to 'Edit', edit_fileversion_path(fileversion) %></td>
+    <td><%= link_to 'Destroy', fileversion, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fileversion', new_fileversion_path %>
