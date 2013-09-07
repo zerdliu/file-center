@@ -4,9 +4,9 @@ class Filename < ActiveRecord::Base
   has_many :fileversions
 
   def self.stat_file_update_type
-    {
-      static:  Filename.all.select { |x| x == "static" }.size ,
-      dynamic: Filename.all.select { |x| x == "dynamic" }.size
-    }
+    [
+      {label: "static", value: Filename.all.select { |x| x.update_type == "static" }.size },
+      {label: "dynamic",value: Filename.all.select { |x| x.update_type == "dynamic" }.size},
+    ]
   end
 end

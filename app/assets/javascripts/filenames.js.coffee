@@ -5,8 +5,4 @@
 jQuery ->
   Morris.Donut
     element: 'stat_file_update_type'
-    data: [
-      {label: "Download Sales", value: 12}
-      {label: "In-Store Sales", value: 30}
-      {label: "Mail-Order Sales", value: 20}
-    ]
+    data: $('#stat_file_update_type').data('filenames')

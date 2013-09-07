@@ -1,11 +1,15 @@
-<h1>Listing filenames</h1>
+<h1>File Center</h1>
 
-<div id="stat_file_update_type"></div>
+<%= content_tag :div, "", id: "stat_file_update_type", data: {filenames: Filename.stat_file_update_type } %>
 
 <table>
   <tr>
     <th>Name</th>
     <th>Update type</th>
+    <th>Project</th>
+    <th>Last Version</th>
+    <th>Average Size</th>
+    <th>Last Version Size</th>
     <th></th>
     <th></th>
     <th></th>
@@ -16,6 +20,10 @@
   <tr>
     <td><%= filename.name %></td>
     <td><%= filename.update_type %></td>
+    <td><%= filename.project.name %></td>
+    <td><%= filename.fileversions.first || 0 %></td>
+    <td><%= filename.fileversions.first || 0 %></td>
+    <td><%= filename.fileversions.first || 0 %></td>
     <td><%= link_to 'Show', filename %></td>
     <td><%= link_to 'Edit', edit_filename_path(filename) %></td>
     <td><%= link_to 'Destroy', filename, method: :delete, data: { confirm: 'Are you sure?' } %></td>
