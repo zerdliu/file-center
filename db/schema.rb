@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20130906114153) do
     t.string   "name"
     t.string   "update_type"
     t.integer  "project_id"
+    t.string   "source_addr"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -26,8 +27,9 @@ ActiveRecord::Schema.define(:version => 20130906114153) do
     t.integer  "file_version"
     t.time     "update_time"
     t.integer  "filename_id"
-    t.datetime "created_at",   :null => false
-    t.datetime "updated_at",   :null => false
+    t.integer  "download_times"
+    t.datetime "created_at",     :null => false
+    t.datetime "updated_at",     :null => false
   end
 
   create_table "projects", :force => true do |t|

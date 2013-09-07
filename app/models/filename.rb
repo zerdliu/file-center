@@ -1,5 +1,5 @@
 class Filename < ActiveRecord::Base
-  attr_accessible :name, :update_type
+  attr_accessible :name, :update_type, :project_id, :source_addr
   belongs_to :project
   has_many :fileversions
 
@@ -9,4 +9,5 @@ class Filename < ActiveRecord::Base
       {label: "dynamic",value: Filename.all.select { |x| x.update_type == "dynamic" }.size},
     ]
   end
+
 end

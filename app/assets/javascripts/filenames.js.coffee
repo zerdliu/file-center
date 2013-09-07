@@ -6,3 +6,8 @@ jQuery ->
   Morris.Donut
     element: 'stat_file_update_type'
     data: $('#stat_file_update_type').data('filenames')
+
+  Morris.Donut
+    element: 'stat_file_download_method'
+    data: $('#stat_file_download_method').data('fileversions')
+

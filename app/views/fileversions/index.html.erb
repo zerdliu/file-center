@@ -5,6 +5,9 @@
     <th>File size</th>
     <th>File version</th>
     <th>Update time</th>
+    <th>File name</th>
+    <th>Project name</th>
+    <th>Download Times</th>
     <th></th>
     <th></th>
     <th></th>
@@ -15,6 +18,9 @@
     <td><%= fileversion.file_size %></td>
     <td><%= fileversion.file_version %></td>
     <td><%= fileversion.update_time %></td>
+    <td><%= fileversion.filename.name %></td>
+    <td><%= fileversion.filename.project.name %></td>
+    <td><%= fileversion.download_times %></td>
     <td><%= link_to 'Show', fileversion %></td>
     <td><%= link_to 'Edit', edit_fileversion_path(fileversion) %></td>
     <td><%= link_to 'Destroy', fileversion, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -5,6 +5,7 @@ class CreateFileversions < ActiveRecord::Migration
       t.integer :file_version
       t.time :update_time
       t.integer :filename_id
+      t.integer :download_times
 
       t.timestamps
     end
