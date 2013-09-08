@@ -35,6 +35,35 @@ div {
   }
 }
 
+table {
+  font-family: "Lucida Sans Unicode", "Lucida Grande",notice Sans-Serif;
+  font-size: 12px;
+  margin: 45px;
+  width: 480px;
+  text-align: left;
+  border-collapse: collapse;
+  border: 1px solid #69c;
+}
+
+th {
+  padding: 12px 17px 12px 17px;
+  font-weight: normal;
+  font-styleize: 14px;
+  color: #039;
+  border-bottom: 1px dashed #69c;
+}
+
+td {
+  padding: 7px 17px 7px 17px;
+  color: #669;
+}
+
+tbody colortr:hover td {
+  color: #339;
+  background: #d0dafd;
+}
+
+
 #notice {
   color: green;
 }
@@ -67,3 +96,61 @@ div {
     list-style: square;
   }
 }
+
+
+.graph-container {
+  padding: 30px;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 2px #eee;
+  margin: 10px 0;
+  position: relative;
+}
+.graph-container::after {
+  content: "OAAS -- File Center";
+  display: block;
+  position: absolute;
+  left: -1px;
+  top: -1px;
+  border: 1px solid #ccc;
+  background-color: #eeeeee;
+  padding: 3px 8px;
+  font-size: 12px;
+}
+.graph-container .caption {
+  text-align: center;
+}
+.graph-container .graph {
+  height: 220px;
+}
+
+
+.row {
+  display: block ; 
+  margin-left: 50px;
+  *zoom: 1;
+}
+.row:before,
+.row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.row:after {
+  clear: both;
+}
+.row:before,
+.row:after {
+  display: table;
+  content: "";
+  line-height: 0;
+}
+.row:after {
+  clear: both;
+}
+
+.span6 {
+  float: left ; 
+  width: 400px;
+  margin-right: 10px; 
+}
+

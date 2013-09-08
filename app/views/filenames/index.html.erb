@@ -1,21 +1,33 @@
 <h1>File Center</h1>
 
+<div class="row">
+<div class="span6">
+<div class="graph-container">
+<div class="caption">File type [static/dynamic]</div>
 <%= content_tag :div, "", id: "stat_file_update_type", style: "height: 150px", data: {filenames: Filename.stat_file_update_type } %>
+</div>
+</div>
+<div class="span6">
+<div class="graph-container">
+<div class="caption">Download Method [ftp/p2p]</div>
 <%= content_tag :div, "", id: "stat_file_download_method", style: "height: 150px", data: {fileversions: Fileversion.stat_file_download_method } %>
+</div>
+</div>
+</div>
+
 
 <table>
   <tr>
-    <th>Name</th>
-    <th>Update type</th>
-    <th>Project</th>
-    <th>Last Version</th>
-    <th>Average Size</th>
-    <th>Last Version Size</th>
-    <th>Update Freq</th>
-    <th>Download Times</th>
-    <th></th>
-    <th></th>
-    <th></th>
+    <th><%= sort_link @search, :name, "Name" %></th>
+    <th><%= sort_link @search, :update_type, "Update type" %></th>
+    <th><%= sort_link @search, :project_name, "Project" %> </th>
+    <th><%= sort_link @search, :last_version, "Last Version" %></th>
+    <th><%= sort_link @search, :average_file_size, "Average Size" %></th>
+    <th><%= sort_link @search, :last_file_size, "Last Version Size" %></th>
+    <th><%= sort_link @search, :update_freq, "Update Freq" %></th>
+    <th><%= sort_link @search, :download_times, "Download Times" %></th>
+    <th><%= sort_link @search, :update_kb, "Update KB[sum(file_size)]" %></th>
+    <th><%= sort_link @search, :download_kb, "Download KB[sum(DT x file_size]" %></th>
   </tr>
 
 
@@ -23,19 +35,16 @@
   <tr>
     <td><%= filename.name %></td>
     <td><%= filename.update_type %></td>
-    <td><%= filename.project.name %></td>
-    <td><%= filename.fileversions.last.file_version || 0 %></td>
-    <td><%= filename.fileversions.last.file_size  || 0 %></td>
-    <td><%= filename.fileversions.last.file_size || 0 %></td>
-    <td><%= filename.fileversions.last.download_times || 0  %></td>
-    <td><%= filename.fileversions.inject(0){ |sum, e| sum + e.download_times } || 0  %></td>
-    <td><%= link_to 'Show', filename %></td>
-    <td><%= link_to 'Edit', edit_filename_path(filename) %></td>
-    <td><%= link_to 'Destroy', filename, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    <td><%= filename.project_name %></td>
+    <td><%= filename.last_version || 0 %></td>
+    <td><%= filename.average_file_size || 0 %></td>
+    <td><%= filename.last_file_size  || 0 %></td>
+    <td><%= filename.update_freq || 0  %></td>
+    <td><%= filename.download_times || 0  %></td>
+    <td><%= filename.update_kb || 0  %></td>
+    <td><%= filename.download_kb || 0  %></td>
   </tr>
 <% end %>
-</table>
 
 <br />
 
-<%= link_to 'New Filename', new_filename_path %>
