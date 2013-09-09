@@ -1,0 +1,17 @@
+# Ignore the default SQLite database.
+db/*.sqlite3
+db/*.sql
+
+# Ignore all logfiles and tempfiles.
+log/*
+tmp
+nohup.out
+
+*.gem
+*.rbc
+*.swp
+*.vim
+
+.bundle
+.config
+.yardoc
